@@ -1,0 +1,460 @@
+.secao-com-fundo::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('../img/simbolo.webp')center center / contain no-repeat;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.nav-link{
+font-size: 20px;
+color: white;
+font-weight: 400;
+text-transform: uppercase;
+}
+
+.carousel-caption {
+    border-radius: 12px;
+    padding: 20px;
+    bottom: 30%; /* posiciona acima do rodapé */
+}
+
+.carousel-caption h2.carrossel-titulo {
+    font-size: 46px;
+    line-height: 60px;
+    font-weight: 300;
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(0,0,0,0.6);
+}
+
+.carousel-caption p.carrossel-texto {
+    font-size: 25px;
+    font-weight: 500;
+    color: #BE975D;
+    margin-top: 8px;
+    text-shadow: 0 0 5px rgba(0,0,0,0.6);
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+    .carousel-caption {
+        bottom: 10%;
+        padding: 12px;
+        max-width: 90%; /* para não ficar muito largo */
+        margin: 0 auto; /* centraliza */
+        border-radius: 12px;
+    }
+    .carousel-caption h2.carrossel-titulo {
+        font-size: 20px; /* maior e legível */
+        line-height: 28px; /* para controlar o espaçamento entre linhas */
+        font-weight: 400;
+    }
+    .carousel-caption p.carrossel-texto {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+
+.carousel-item img {
+    width: 100%;
+    height: 700px; 
+    object-fit: cover;
+    filter: brightness(0.6); 
+}
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 300px;        
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item img {
+        height: 250px;
+        object-fit: cover;         
+    }
+}
+.carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%; /* deixa redondo */
+    margin: 0 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.carousel-indicators .active {
+    background-color: #BE975D; /* ouro sólido quando ativo */
+    transform: scale(1.2); /* levemente maior para destaque */
+}
+
+/* Animação de surgimento */
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplicação nas legendas */
+.carousel-caption h2,
+.carousel-caption p {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUpFade 1s ease forwards;
+}
+
+/* Delay para o subtítulo aparecer depois */
+.carousel-caption p {
+    animation-delay: 0.5s;
+}
+
+
+
+  .navbar-custom {
+    position: fixed;
+    background-color: #32323280;
+    backdrop-filter: blur(30px);
+    border: 1.5px solid rgba(255, 255, 255, 0.18);
+    padding: 7px 30px;
+    gap: 20px;
+    top: 20px;             
+    left: 50%;  
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffffcc;
+    border-radius: 100px;
+    max-width: 670px;
+    z-index: 9999;
+  }
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+  }
+  .navbar-logo img {
+    height: 40px;
+    border-radius: 50%;
+  }
+  .navbar-links {
+    display: flex;
+    align-items: center;
+    
+    font-size: 16px;
+  }
+  .navbar-links a {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+    padding-bottom: 4px; /* espaço respirável abaixo do texto */
+}
+
+.navbar-links a::after {
+    content: "";
+    position: absolute;
+    bottom: 0; /* encosta exatamente embaixo do texto */
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s, left 0.3s;
+}
+
+.navbar-links a:hover {
+    color: #cca160;
+}
+
+.navbar-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/*NAV MOBILE*/
+#mobileNavbar {
+    width: 100%;
+    text-align: center;
+}
+
+#mobileNavbar .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+#mobileNavbar .nav-link {
+    color: #000000 !important;
+    position: relative;
+    padding: 8px 0;
+    transition: color 0.3s, transform 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#mobileNavbar .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #cca160, #ffd700);
+    transition: width 0.3s ease, left 0.3s ease;
+    border-radius: 5px;
+}
+
+#mobileNavbar .nav-link:hover {
+    color: #ffd700 !important;
+    transform: scale(1.05);
+}
+
+#mobileNavbar .nav-link:hover::after {
+    width: 50%;
+    left: 25%;
+}
+
+
+/* Container img sobrepostas */
+.pai {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 615px;
+}
+
+.fi1,
+.fi2 {
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.fi1 {
+    z-index: 1;
+    top: 30px;
+    left: 140px;
+}
+
+.fi2 {
+    z-index: 2;
+    top: 90px;
+    left: 60px;
+}
+
+
+
+/* Texto sobre instituto */
+.texto-lorem {
+    background-color: #0c2200bf; /* verde musgo claro */
+    padding: 30px;
+    height: 100%;
+    border-radius: 12px;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.texto-lorem h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.texto-lorem p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .pai {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .fi1,
+    .fi2 {
+        position: static;
+        width: 90%;
+        height: auto;
+        margin-bottom: 15px;
+    }
+}
+
+.grid-busca {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.grid-item {
+    background: #000;
+    color: #fff;
+    padding: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: flex-end;
+    justify-content: left;
+    height: 200px;
+    position: relative;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Ajuste de tamanhos específicos */
+.item1 {
+    grid-column: span 2;
+     background: url('../img/ema.webp') center/cover no-repeat;
+}
+
+.item2 {
+    grid-column: span 1;
+    grid-row: span 2; /* aumenta altura até o final */
+    height: 410px;
+     background: url('../img/hiper.webp') center/cover no-repeat;
+}
+
+.item3 {
+    grid-column: span 1;
+    grid-row: span 2; /* aumenta altura até o final */
+    height: 410px;
+     background: url('../img/avl-met.webp') center/cover no-repeat;
+}
+
+.item4 {
+    grid-column: span 1;
+    background: url('../img/vitam.webp') center/cover no-repeat;
+}
+
+.item5 {
+    grid-column: span 1;
+    background: url('../img/perfo.webp') center/cover no-repeat;
+}
+
+/* ==================== MOBILE COM STACK SCROLL ==================== */
+@media (max-width: 768px) {
+      .grid-busca {
+        display: block;
+        position: relative;
+    }
+
+    .grid-item {
+        position: sticky;
+        width: 100%;
+        height: 50vh;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        border-radius: 0;
+        z-index: 1;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+    .grid-busca {
+        display: block;
+        position: relative;
+    }
+
+    .grid-item {
+        position: sticky;
+        width: 100%;
+        height: 50vh; /* altura confortável */
+        font-size: 1.5rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        border-radius: 0;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .item1 {
+        border-radius: 10px;
+        top: 0px;
+        background: url('../img/ema.webp') center/cover no-repeat;
+        z-index: 1;
+    }
+
+    .item2 {
+        border-radius: 10px;
+        top: 90px; /* aumentei o espaço para ~15% do viewport */
+        background: url('../img/hiper.webp') center/cover no-repeat;
+        z-index: 2;
+    }
+
+    .item3 {
+        border-radius: 10px;
+        top: 120px; /* aumenta ainda mais o espaço */
+        background: url('../img/avl-met.webp') center/cover no-repeat;
+        z-index: 3;
+    }
+
+    .item4 {
+        border-radius: 10px;
+        top: 150px; /* segue a escala */
+        background: url('../img/vitam.webp') center/cover no-repeat;
+        z-index: 4;
+    }
+
+    .item5 {
+        border-radius: 10px;
+        top: 200px; /* espaço maior entre as imagens */
+        background: url('../img/perfo.webp') center/cover no-repeat;
+        z-index: 5;
+    }
+}
+
+    
+}
+
+
+.footer-site {
+    background: url('../img/marmorizado2.jpg'); /* fundo escuro elegante */
+    font-size: 14px;
+     color: #cca160;
+}
+
+.footer-site a.footer-link {
+    color: #cca160;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-site a.footer-link:hover {
+    color: #ffd700;
+}
+
+.footer-logo img {
+    width: auto;
+}
+
+.footer-info p {
+    margin: 0;
+    padding: 2px 0;
+    line-height: 1.4;
+}
